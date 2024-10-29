@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package common;
+
+option go_package = "squad-maker/generated/common;pbCommon";
+
+enum Order {
+    ordAscending = 0;
+    ordDescending = 1;
+}
+
+message SortOption {
+    string sort = 1;
+    Order order = 2;
+}
+
+enum FilterOperator {
+    foEqual = 0;
+    foNotEqual = 1;
+    foLike = 2;
+    foLikeInsensitive = 3;
+    foIsNull = 4;
+    foIsNotNull = 5;
+    foLessThan = 6;
+    foLessThanEqual = 7;
+    foGreaterThan = 8;
+    foGreaterThanEqual = 9;
+}
+
+message SimpleFilterData {
+    string filter_key = 1;
+    string value = 2;
+    FilterOperator operator = 3;
+    bool is_dynamic = 4;
+}
+
+message InFilterData {
+    bool is_not = 1;
+    string filter_key = 2;
+    repeated string value = 3;
+}
+
+message GroupedFilterData {
+    repeated FilterData filters = 1;
+}
+
+message FilterData {
+    bool is_or = 1;
+    oneof filter {
+        SimpleFilterData simple = 2;
+        InFilterData in = 3;
+        GroupedFilterData grouped = 4;
+    }
+}
+
+message PaginationData {
+    uint32 page = 1;
+    uint32 limit = 2;
+    repeated SortOption sort_options = 3;
+}
+
+message ReadAllRequest {
+    PaginationData pagination = 1;
+    repeated FilterData filters = 2;
+}
+
+message PaginatedResponseMetadata {
+    uint32 page = 1;
+    uint32 limit = 2;
+    uint64 total = 3;
+}

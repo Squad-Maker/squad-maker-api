@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "squad-maker/generated/auth;pbAuth";
+
+import "auth/auth.proto";
+
+service AuthService {
+    rpc CreateToken(CreateTokenRequest) returns (TokenResponse) { }
+    rpc RefreshToken(RefreshTokenRequest) returns (TokenResponse) { }
+    rpc InvalidateToken(InvalidateTokenRequest) returns (InvalidateTokenResponse) { }
+
+    rpc Me(MeRequest) returns (MeResponse) { }
+}

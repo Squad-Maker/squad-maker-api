@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "squad-maker/generated/auth;pbAuth";
+
+enum UserType {
+    utAdmin = 0;
+    utProfessor = 1;
+    utStudent = 2;
+}

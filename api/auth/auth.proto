@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "squad-maker/generated/auth;pbAuth";
+
+import "auth/enum.proto";
+
+message CreateTokenRequest {
+    string username = 1;
+    string password = 2;
+    bool keep_connected = 3;
+}
+message RefreshTokenRequest { }
+
+message TokenResponse {
+    string access_token = 1;
+    string refresh_token = 2;
+    string token_type = 3;
+    int32 expires_in = 4;
+}
+
+message InvalidateTokenRequest { }
+message InvalidateTokenResponse { }
+
+message MeRequest {}
+message MeResponse {
+    int64 id = 1;
+    UserType type = 2;
+    string name = 3;
+    string email = 4;
+}
