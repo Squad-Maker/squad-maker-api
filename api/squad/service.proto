@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package squad;
+
+option go_package = "squad-maker/generated/squad;pbSquad";
+
+import "squad/project.proto";
+import "common/pagination.proto";
+
+service SquadService {
+    rpc ReadProject(ReadProjectRequest) returns (Project) { }
+    rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse) { }
+    rpc UpdateProject(UpdateProjectRequest) returns (UpdateProjectResponse) { }
+    rpc DeleteProject(DeleteProjectRequest) returns (DeleteProjectResponse) { }
+    rpc ReadAllProjects(common.ReadAllRequest) returns (ReadAllProjectsResponse) { }
+}

@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package squad;
+
+option go_package = "squad-maker/generated/squad;pbSquad";
+
+import "common/pagination.proto";
+
+// Project representa um projeto dentro de uma disciplina.
+// Efetivamente, representa um time.
+message Project {
+    int64 id = 1;
+    string name = 2;
+}
+
+message ReadProjectRequest {
+    int64 id = 1;
+}
+
+message CreateProjectRequest {
+    string name = 1;
+}
+
+message CreateProjectResponse {
+    int64 id = 1;
+}
+
+message UpdateProjectRequest {
+    int64 id = 1;
+    string name = 2;
+}
+message UpdateProjectResponse { }
+
+message DeleteProjectRequest {
+    int64 id = 1;
+}
+message DeleteProjectResponse { }
+
+message ReadAllProjectsResponse {
+    common.PaginatedResponseMetadata metadata = 1;
+    repeated Project data = 2;
+}

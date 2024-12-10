@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package squad;
+
+option go_package = "squad-maker/generated/squad;pbSquad";
+
+import "common/pagination.proto";
+
+// Subject representa uma disciplina.
+// Por enquanto, só vai ter uma disciplina cadastrada de forma fixa no banco.
+// Esta mensagem serve como base para futuramente expandir o sistema para várias disciplinas.
+message Subject {
+    int64 id = 1;
+    string name = 2;
+    repeated int64 owner_ids = 3;
+}

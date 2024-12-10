@@ -5,7 +5,7 @@ package auth;
 option go_package = "squad-maker/generated/auth;pbAuth";
 
 enum UserType {
-    utAdmin = 0;
+    utAdmin = 0; // unused
     utProfessor = 1;
     utStudent = 2;
 }
