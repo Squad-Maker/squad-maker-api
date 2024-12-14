@@ -4,10 +4,28 @@ package squad;
 
 option go_package = "squad-maker/generated/squad;pbSquad";
 
+import "squad/competence-level.proto";
+import "squad/method.proto";
+import "squad/position.proto";
 import "squad/project.proto";
 import "common/pagination.proto";
 
 service SquadService {
+    rpc ReadCompetenceLevel(ReadCompetenceLevelRequest) returns (CompetenceLevel) { }
+    rpc CreateCompetenceLevel(CreateCompetenceLevelRequest) returns (CreateCompetenceLevelResponse) { }
+    rpc UpdateCompetenceLevel(UpdateCompetenceLevelRequest) returns (UpdateCompetenceLevelResponse) { }
+    rpc DeleteCompetenceLevel(DeleteCompetenceLevelRequest) returns (DeleteCompetenceLevelResponse) { }
+    rpc ReadAllCompetenceLevels(common.ReadAllRequest) returns (ReadAllCompetenceLevelsResponse) { }
+
+    rpc GetStudentSubjectData(GetStudentSubjectDataRequest) returns (GetStudentSubjectDataResponse) { }
+    rpc UpdateStudentSubjectData(UpdateStudentSubjectDataRequest) returns (UpdateStudentSubjectDataResponse) { }
+
+    rpc ReadPosition(ReadPositionRequest) returns (Position) { }
+    rpc CreatePosition(CreatePositionRequest) returns (CreatePositionResponse) { }
+    rpc UpdatePosition(UpdatePositionRequest) returns (UpdatePositionResponse) { }
+    rpc DeletePosition(DeletePositionRequest) returns (DeletePositionResponse) { }
+    rpc ReadAllPositions(common.ReadAllRequest) returns (ReadAllPositionsResponse) { }
+
     rpc ReadProject(ReadProjectRequest) returns (Project) { }
     rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse) { }
     rpc UpdateProject(UpdateProjectRequest) returns (UpdateProjectResponse) { }

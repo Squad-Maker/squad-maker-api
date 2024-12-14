@@ -29,4 +29,5 @@ message MeResponse {
     UserType type = 2;
     string name = 3;
     string email = 4;
+    bool had_first_update = 5;
 }

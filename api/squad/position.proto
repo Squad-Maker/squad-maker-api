@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package squad;
+
+option go_package = "squad-maker/generated/squad;pbSquad";
+
+import "common/pagination.proto";
+
+// Position representa um cargo dentro de uma disciplina.
+message Position {
+    int64 id = 1;
+    int64 subject_id = 2;
+    string name = 3;
+}
+
+message ReadPositionRequest {
+    int64 id = 1;
+}
+
+message CreatePositionRequest {
+    int64 subject_id = 1;
+    string name = 2;
+}
+
+message CreatePositionResponse {
+    int64 id = 1;
+}
+
+message UpdatePositionRequest {
+    int64 id = 1;
+    string name = 2;
+}
+message UpdatePositionResponse { }
+
+message DeletePositionRequest {
+    int64 id = 1;
+}
+message DeletePositionResponse { }
+
+message ReadAllPositionsResponse {
+    common.PaginatedResponseMetadata metadata = 1;
+    repeated Position data = 2;
+}

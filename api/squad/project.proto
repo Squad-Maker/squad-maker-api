@@ -11,14 +11,23 @@ import "common/pagination.proto";
 message Project {
     int64 id = 1;
     string name = 2;
+    string description = 3;
 }
 
 message ReadProjectRequest {
     int64 id = 1;
 }
 
+message ReadProjectResponse {
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+    
+}
+
 message CreateProjectRequest {
     string name = 1;
+    string description = 2;
 }
 
 message CreateProjectResponse {
@@ -28,6 +37,7 @@ message CreateProjectResponse {
 message UpdateProjectRequest {
     int64 id = 1;
     string name = 2;
+    string description = 3;
 }
 message UpdateProjectResponse { }
 
