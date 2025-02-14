@@ -18,6 +18,7 @@ message GetStudentSubjectDataResponse {
     Position position_option_1 = 3;
     Position position_option_2 = 4;
     Project preferred_project = 5;
+    bool had_first_update = 6;
 }
 
 message UpdateStudentSubjectDataRequest {
@@ -29,3 +30,15 @@ message UpdateStudentSubjectDataRequest {
     int64 preferred_project_id = 6;
 }
 message UpdateStudentSubjectDataResponse { }
+
+message GenerateTeamRequest {
+    int64 subject_id = 1;
+    oneof project_info {
+        int64 project_id = 2;
+        CreateProjectRequest new_project = 3;
+    }
+}
+
+message GenerateTeamResponse {
+    int64 project_id = 2;
+}
