@@ -19,6 +19,7 @@ service SquadService {
 
     rpc GetStudentSubjectData(GetStudentSubjectDataRequest) returns (GetStudentSubjectDataResponse) { }
     rpc UpdateStudentSubjectData(UpdateStudentSubjectDataRequest) returns (UpdateStudentSubjectDataResponse) { }
+    rpc GenerateTeam(GenerateTeamRequest) returns (GenerateTeamResponse) { }
 
     rpc ReadPosition(ReadPositionRequest) returns (Position) { }
     rpc CreatePosition(CreatePositionRequest) returns (CreatePositionResponse) { }
