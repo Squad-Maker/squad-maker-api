@@ -13,8 +13,8 @@ message Project {
         int64 id = 1;
         string name = 2;
         string email = 3;
-        int64 competence_level_id = 4;
-        string competence_level_name = 5;
+        optional int64 competence_level_id = 4;
+        optional string competence_level_name = 5;
         repeated string tools = 6;
         int64 position_id = 7;
         string position_name = 8;
@@ -52,9 +52,15 @@ message CreateProjectResponse {
 }
 
 message UpdateProjectRequest {
+    message Position {
+        int64 id = 1;
+        int64 count = 2;
+    }
+
     int64 id = 1;
     string name = 2;
     string description = 3;
+    repeated Position positions = 4;
 }
 message UpdateProjectResponse { }
 

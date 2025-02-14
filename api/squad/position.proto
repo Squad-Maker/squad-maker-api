@@ -9,8 +9,7 @@ import "common/pagination.proto";
 // Position representa um cargo dentro de uma disciplina.
 message Position {
     int64 id = 1;
-    int64 subject_id = 2;
-    string name = 3;
+    string name = 2;
 }
 
 message ReadPositionRequest {
@@ -18,8 +17,7 @@ message ReadPositionRequest {
 }
 
 message CreatePositionRequest {
-    int64 subject_id = 1;
-    string name = 2;
+    string name = 1;
 }
 
 message CreatePositionResponse {

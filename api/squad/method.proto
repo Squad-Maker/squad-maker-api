@@ -28,13 +28,12 @@ message UpdateStudentSubjectDataRequest {
 message UpdateStudentSubjectDataResponse { }
 
 message GenerateTeamRequest {
-    int64 subject_id = 1;
     oneof project_info {
-        int64 project_id = 2;
-        CreateProjectRequest new_project = 3;
+        int64 project_id = 1;
+        CreateProjectRequest new_project = 2;
     }
 }
 
 message GenerateTeamResponse {
-    int64 project_id = 2;
+    int64 project_id = 1;
 }

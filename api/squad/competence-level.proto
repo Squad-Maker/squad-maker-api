@@ -10,8 +10,7 @@ import "common/pagination.proto";
 // Exemplo: Júnior, Pleno e Sênior na disciplina da Fábrica de Software
 message CompetenceLevel {
     int64 id = 1;
-    int64 subject_id = 2;
-    string name = 3;
+    string name = 2;
 }
 
 message ReadCompetenceLevelRequest {
@@ -19,8 +18,7 @@ message ReadCompetenceLevelRequest {
 }
 
 message CreateCompetenceLevelRequest {
-    int64 subject_id = 1;
-    string name = 2;
+    string name = 1;
 }
 
 message CreateCompetenceLevelResponse {
