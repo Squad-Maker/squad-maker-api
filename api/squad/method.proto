@@ -8,10 +8,7 @@ import "squad/competence-level.proto";
 import "squad/position.proto";
 import "squad/project.proto";
 
-message GetStudentSubjectDataRequest {
-    int64 subject_id = 1;
-}
-
+message GetStudentSubjectDataRequest { }
 message GetStudentSubjectDataResponse {
     repeated string tools = 1;
     CompetenceLevel competence_level = 2;
