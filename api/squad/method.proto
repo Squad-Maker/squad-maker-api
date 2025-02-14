@@ -19,12 +19,11 @@ message GetStudentSubjectDataResponse {
 }
 
 message UpdateStudentSubjectDataRequest {
-    int64 subject_id = 1;
-    repeated string tools = 2;
-    int64 competence_level_id = 3;
-    int64 position_option_1_id = 4;
-    int64 position_option_2_id = 5;
-    int64 preferred_project_id = 6;
+    repeated string tools = 1;
+    int64 competence_level_id = 2;
+    int64 position_option_1_id = 3;
+    int64 position_option_2_id = 4;
+    int64 preferred_project_id = 5;
 }
 message UpdateStudentSubjectDataResponse { }
 
