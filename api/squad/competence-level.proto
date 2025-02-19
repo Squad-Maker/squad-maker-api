@@ -11,6 +11,7 @@ import "common/pagination.proto";
 message CompetenceLevel {
     int64 id = 1;
     string name = 2;
+    // double weight = 3;
 }
 
 message ReadCompetenceLevelRequest {
@@ -19,6 +20,7 @@ message ReadCompetenceLevelRequest {
 
 message CreateCompetenceLevelRequest {
     string name = 1;
+    // double weight = 2;
 }
 
 message CreateCompetenceLevelResponse {
@@ -28,6 +30,7 @@ message CreateCompetenceLevelResponse {
 message UpdateCompetenceLevelRequest {
     int64 id = 1;
     string name = 2;
+    // double weight = 3;
 }
 message UpdateCompetenceLevelResponse { }
 

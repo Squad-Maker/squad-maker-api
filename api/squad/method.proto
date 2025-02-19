@@ -27,6 +27,9 @@ message UpdateStudentSubjectDataRequest {
 }
 message UpdateStudentSubjectDataResponse { }
 
+message GenerateAllTeamsRequest { }
+message GenerateAllTeamsResponse { }
+
 message GenerateTeamRequest {
     oneof project_info {
         int64 project_id = 1;
@@ -50,3 +53,10 @@ message RemoveStudentFromTeamRequest {
     int64 student_id = 2;
 }
 message RemoveStudentFromTeamResponse { }
+
+message RequestTeamRevaluationRequest {
+    int64 project_id = 1;
+    string reason = 2;
+    optional int64 desired_project_id = 3;
+}
+message RequestTeamRevaluationResponse { }

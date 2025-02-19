@@ -13,27 +13,28 @@ message Project {
         int64 id = 1;
         string name = 2;
         string email = 3;
-        optional int64 competence_level_id = 4;
-        optional string competence_level_name = 5;
+        int64 competence_level_id = 4;
+        string competence_level_name = 5;
         repeated string tools = 6;
         int64 position_id = 7;
         string position_name = 8;
+    }
+
+    message Position {
+        int64 id = 1;
+        string name = 2;
+        int64 count = 3;
     }
 
     int64 id = 1;
     string name = 2;
     string description = 3;
     repeated Student students = 4;
+    repeated Position positions = 5;
 }
 
 message ReadProjectRequest {
     int64 id = 1;
-}
-
-message ReadProjectResponse {
-    int64 id = 1;
-    string name = 2;
-    string description = 3;
 }
 
 message CreateProjectRequest {
