@@ -37,3 +37,10 @@ message GenerateTeamRequest {
 message GenerateTeamResponse {
     int64 project_id = 1;
 }
+
+message AddStudentToTeamRequest {
+    int64 project_id = 1;
+    int64 student_id = 2;
+    int64 position_id = 3;
+}
+message AddStudentToTeamResponse { }
