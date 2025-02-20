@@ -7,6 +7,7 @@ option go_package = "squad-maker/generated/squad;pbSquad";
 import "squad/competence-level.proto";
 import "squad/position.proto";
 import "squad/project.proto";
+import "common/pagination.proto";
 
 message GetStudentSubjectDataRequest { }
 message GetStudentSubjectDataResponse {
@@ -26,6 +27,34 @@ message UpdateStudentSubjectDataRequest {
     optional int64 preferred_project_id = 5;
 }
 message UpdateStudentSubjectDataResponse { }
+
+message StudentInSubject {
+    message Project {
+        int64 id = 1;
+        string name = 2;
+        int64 position_id = 3;
+        string position_name = 4;
+    }
+
+    int64 id = 1;
+    string name = 2;
+    string email = 3;
+    repeated string tools = 4;
+    int64 competence_level_id = 5;
+    string competence_level_name = 6;
+    int64 position_option_1_id = 7;
+    string position_option_1_name = 8;
+    optional int64 position_option_2_id = 9;
+    optional string position_option_2_name = 10;
+    optional int64 preferred_project_id = 11;
+    optional string preferred_project_name = 12;
+    repeated Project in_projects = 13;
+}
+
+message ReadAllStudentsInSubjectResponse {
+    common.PaginatedResponseMetadata metadata = 1;
+    repeated StudentInSubject data = 2;
+}
 
 message GenerateAllTeamsRequest { }
 message GenerateAllTeamsResponse { }
