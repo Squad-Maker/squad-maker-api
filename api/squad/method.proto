@@ -5,6 +5,7 @@ package squad;
 option go_package = "squad-maker/generated/squad;pbSquad";
 
 import "squad/competence-level.proto";
+import "squad/enum.proto";
 import "squad/position.proto";
 import "squad/project.proto";
 import "common/pagination.proto";
@@ -56,7 +57,9 @@ message ReadAllStudentsInSubjectResponse {
     repeated StudentInSubject data = 2;
 }
 
-message GenerateAllTeamsRequest { }
+message GenerateAllTeamsRequest {
+    TeamGeneratorType generator_type = 2;
+}
 message GenerateAllTeamsResponse { }
 
 message GenerateTeamRequest {
@@ -64,6 +67,7 @@ message GenerateTeamRequest {
         int64 project_id = 1;
         CreateProjectRequest new_project = 2;
     }
+    TeamGeneratorType generator_type = 3;
 }
 
 message GenerateTeamResponse {
