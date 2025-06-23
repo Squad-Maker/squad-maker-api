@@ -26,11 +26,19 @@ message Project {
         int64 count = 3;
     }
 
+    message CompetenceLevel {
+        int64 id = 1;
+        string name = 2;
+        int64 count = 3;
+    }
+
     int64 id = 1;
     string name = 2;
     string description = 3;
     repeated Student students = 4;
     repeated Position positions = 5;
+    repeated CompetenceLevel competence_levels = 6;
+    repeated string tools = 7;
 }
 
 message ReadProjectRequest {
@@ -43,9 +51,16 @@ message CreateProjectRequest {
         int64 count = 2;
     }
 
+    message CompetenceLevel {
+        int64 id = 1;
+        int64 count = 2;
+    }
+
     string name = 1;
     string description = 2;
     repeated Position positions = 3;
+    repeated CompetenceLevel competence_levels = 4;
+    repeated string tools = 5;
 }
 
 message CreateProjectResponse {
@@ -58,10 +73,17 @@ message UpdateProjectRequest {
         int64 count = 2;
     }
 
+    message CompetenceLevel {
+        int64 id = 1;
+        int64 count = 2;
+    }
+
     int64 id = 1;
     string name = 2;
     string description = 3;
     repeated Position positions = 4;
+    repeated CompetenceLevel competence_levels = 5;
+    repeated string tools = 6;
 }
 message UpdateProjectResponse { }
 
