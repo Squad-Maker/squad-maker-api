@@ -6,4 +6,5 @@ option go_package = "squad-maker/generated/squad;pbSquad";
 
 enum TeamGeneratorType {
     tgtDefault = 0;
+    tgtGeneticAlgorithm = 1;
 }
